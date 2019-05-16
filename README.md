@@ -40,7 +40,8 @@ main: main class class that inherits from PluginBase
 `Pre-plugin settings`
 
 - Add parameters to mariataSet:
-  * startbefore
+  * startbefore
+  
 ```yaml
 startbefore:
  -
@@ -51,14 +52,15 @@ startbefore:
 Currently loading plugins with plugin.yml is supported.
 
 The class that inherits the task will be started immediately if you add a 
+```java
+@StartNow
 ```
-@
-```
-getReflectLoader method
-Regulation: The plugin using the MariataPluginBase as the main class must use mariata.oml
+- getReflectLoader method
+
+> Regulation: The plugin using the MariataPluginBase as the main class must use mariata.oml
 
 Use of custom hub methods
-
+```java
 //this is the main class that inherits MariataPluginBase
 
 this.getReflectLoader(this,(obj,clz)->{
@@ -72,11 +74,13 @@ Object processing
 }
 
 },new String[]{root package name});
+
+```
 After using this method, all objects will be loaded here, and all objects can be loaded in lambada expressions.
 
-Such as: processing all objects that inherit AAA class
+`Such as: processing all objects that inherit AAA class`
 
-
+```java
 this.getReflectLoader(this,(obj,clz)->{
 
 / / Object processing
@@ -88,3 +92,4 @@ If(obj instanceof AAA){
 }
 
 },new String[]{root package name});
+```
