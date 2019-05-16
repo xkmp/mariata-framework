@@ -70,7 +70,7 @@ startbefore:
 //this为继承MariataPluginBase的主类
 
 
-```
+```java
 this.getReflectLoader(this,(obj,clz)->{
 
 //对象处理
@@ -89,7 +89,7 @@ if(obj instanceof xxx){
 
 `如:处理全部继承AAA类的对象`
 
-```
+```java
 
 this.getReflectLoader(this,(obj,clz)->{
 
